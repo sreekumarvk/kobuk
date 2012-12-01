@@ -8,6 +8,7 @@ var port = process.env.PORT || 5000;
 app.listen(port, function() {
 	console.log("Listening on " + port);
 });
+});
 
 app.get('/dashboard',dashboard.home);
 app.get('/dashboard/:id',dashboard.user);
