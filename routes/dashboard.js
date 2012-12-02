@@ -23,3 +23,13 @@ exports.user = function(request,response) {
     };
     response.render("user", data);
 }
+
+exports.user.settings = function(request,response) {
+    var data = {
+        title : "Profile Settings",
+        id : request.params.id,
+        profiletype: "Developer", //Hardcoded for now
+        services: "1" //One service to start with
+    };
+    response.render("usersettings", data);
+}

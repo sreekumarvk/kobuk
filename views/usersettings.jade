@@ -1,0 +1,45 @@
+html
+	title #{title}
+	body
+		h4 Name: #{id}
+		h4 Profile: #{profiletype}
+		br
+		br
+		h3 Configure Services
+		h4 Twitter
+		div.topbar
+			div.fill
+				div.container
+					form.pull-center(method="post", id="loginForm")
+						input.input-small(id="username", type="text", name="User", placeholder="Username")
+						input.input-small(id="password", type="password", name="Password", placeholder="Password")
+						input.btn.primary(type="submit", value="Sign In")
+					p#loginPrompt.pull-right.login-prompt
+		h4 Quora
+		div.topbar
+			div.fill
+				div.container
+					form.pull-center(method="post", id="loginForm")
+						input.input-small(id="username", type="text", name="User", placeholder="Username")
+						input.input-small(id="password", type="password", name="Password", placeholder="Password")
+						input.btn.primary(type="submit", value="Sign In")
+					p#loginPrompt.pull-right.login-prompt
+		h4 StackOverFlow
+		div.topbar
+			div.fill
+				div.container
+					form.pull-center(method="post", id="loginForm")
+						input.input-small(id="username", type="text", name="User", placeholder="Username")
+						input.input-small(id="password", type="password", name="Password", placeholder="Password")
+						input.btn.primary(type="submit", value="Sign In")
+					p#loginPrompt.pull-right.login-prompt
+		h4 LinkedIn
+		div.topbar
+			div.fill
+				div.container
+					form.pull-center(method="post", id="loginForm")
+						input.input-small(id="username", type="text", name="User", placeholder="Username")
+						input.input-small(id="password", type="password", name="Password", placeholder="Password")
+						input.btn.primary(type="submit", value="Sign In")
+					p#loginPrompt.pull-right.login-prompt
+

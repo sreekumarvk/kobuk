@@ -33,9 +33,12 @@ app.listen(port, function() {
 	console.log("Listening on " + port);
 });
 
-app.get('/',dashboard.home)
-app.get('/:id',dashboard.user)
+//Main fetch
+app.get('/',dashboard.home);
+app.get('/:id',dashboard.user);
+app.get('/:id/settings',dashboard.user.settings)
 
+//Twitter lookup
 app.get('/twitter/connect', twitter.connect);
 app.get('/twitter/lookup/:screen_name', twitter.lookup);
 

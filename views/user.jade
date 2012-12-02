@@ -1,12 +1,14 @@
 html
-  body
-    h4 Name: #{id}
-    h4 Profile: #{profiletype}
-    case services
-      when 0: h4 Has no services defined
-      when 1: h4 Has one service defined
-      default: h4 Has #{services} services
-    #twitter
-    script(type='text/javascript')
-        user_details = {twitter_name: "#{id}" };
+	title #{title}
+	body
+		h4 Name: #{id}
+		h4 Profile: #{profiletype}
+	case services
+		when 1: h4 Twitter defined
+		when 2: h4 StackOverFlow defined
+		when 3: h4 Quora defined
+		default: h4 Nothing defined
 
+	#twitter
+	script(type='text/javascript')
+		user_details = {twitter_name: "#{id}" };
