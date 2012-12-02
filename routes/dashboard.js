@@ -4,18 +4,20 @@
 
 exports.home = function(request,response) {
 	var data = {
-		title : "Qontaqt.Me",
+		title : "QontaQt.me",
 		id : request.params.id
 
 	};
   response.render("dashboard", data);
 }
 
-//prabhu@3:00pm: Commenting this section as it is not needed anymore
+
 exports.user = function(request,response) {
     var data = {
         title : "Profile",
-        id : request.params.id
+        id : request.params.id,
+        profiletype: "Developer", //Hardcoded for now
+        services: "1" //One service to start with
     };
     response.render("user", data);
 }
