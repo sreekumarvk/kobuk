@@ -23,11 +23,12 @@ exports.lookup = function(req, res) {
             console.error("error getting reply." + err);
             return;
         }
-        var view_data = {
-            "timeline": JSON.stringify(data)
-        }
-        console.log('received reply ' + view_data);
-        res.send(view_data);
+
+        console.log('received reply ' + JSON.stringify(data));
+
+        res.render('twitter', {
+            'title' : 'Twitter User Details',
+            'data': data[0]});
     });
 
 //    .getHomeTimeline('', function(err, data) {
