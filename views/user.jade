@@ -7,13 +7,14 @@ html
 	.container
 		h4 Name: #{id}
 		h4 Profile: #{profiletype}
-		case services
-			when 1: h4 Twitter defined
-			when 2: h4 StackOverFlow defined
-			when 3: h4 Quora defined
-			default: h4 Nothing defined
 
 		#twitter
+		h4 Twitter
 		script(type='text/javascript')
 			user_details = {twitter_name: "#{id}" };
+
+		h4 Stack Exchange
+		h4 Quora
+		h4 LinkedIn
+		h4 Klout
 
