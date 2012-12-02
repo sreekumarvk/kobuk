@@ -6,36 +6,27 @@ html
 		br
 		br
 		h3 Configure Services
-		h4 Twitter
 		control-group
+			control-label Twitter : 
 			controls
-				input.input-medium(id="username", type="text", name="User", placeholder="Username")
-				input.input-medium(id="password", type="password", name="Password", placeholder="Password")
+				input.input-medium(id="twitterHandle", type="text", name="twitterUser", placeholder="@twitterHandle")
+		br
+		control-group
+			control-label StackOverFlow : 
+			controls
+				input.input-medium(id="stackUsername", type="text", name="stackUser", placeholder="Username")
+		br
+		control-group
+			control-label Quora : 
+			controls
+				input.input-medium(id="quoraUsername", type="text", name="quoraUser", placeholder="Username")
+		br
+		control-group
+			control-label LinkedIn : 
+			controls
+				input.input-medium(id="linkedinUsername", type="text", name="linkedinUser", placeholder="Username")
+			br
 			form-actions
 				submit.btn
-					btn-primary Login
-		h4 StackOverFlow
-		control-group
-			controls
-				input.input-medium(id="username", type="text", name="User", placeholder="Username")
-				input.input-medium(id="password", type="password", name="Password", placeholder="Password")
-			form-actions
-				submit.btn
-					btn-primary Login
-		h4 Quora
-		control-group
-			controls
-				input.input-medium(id="username", type="text", name="User", placeholder="Username")
-				input.input-medium(id="password", type="password", name="Password", placeholder="Password")	
-			form-actions
-				submit.btn
-					btn-primary Login
-		h4 LinkedIn
-		control-group
-			controls
-				input.input-medium(id="username", type="text", name="User", placeholder="Username")
-				input.input-medium(id="password", type="password", name="Password", placeholder="Password")
-			form-actions
-				submit.btn
-					btn-primary Login
+					btn-primary Submit
 
