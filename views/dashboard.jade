@@ -1,8 +1,19 @@
 html
   title #{title}
   body
-    h1 <center>#{title}</center>
-    h3 The next generation of something is coming
-    h3 Get Noticed!
-
-      
+    h1 <left>#{title}</left>
+    br
+    br
+    br
+    control-group
+      controls
+        input.input-medium(id="username", type="text", name="User", placeholder="Username")
+        input.input-medium(id="password", type="password", name="Password", placeholder="Password")
+      br
+      form-actions
+        submit.btn
+          btn-primary Login
+      br
+      form-actions
+        submit.btn
+          btn-primary Signup

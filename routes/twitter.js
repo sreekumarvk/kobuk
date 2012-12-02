@@ -7,20 +7,39 @@ var twit = new twitter({
    access_token_secret:"ocDW2rf3R7sLppeyvy9buB4jKyVjd1ePTutYozPoQ"
 });
 
+var getTwitter = function(screen_name, callback) {
+    callback(null, [{"screen_name" : screen_name, "followers_count" : screen_name.length}]);
+    return;
 
-exports.lookup = function(req, res) {
-    var name = req.params.screen_name;
-
-    twit.verifyCredentials(function(err, reply) {
+    twit.verifyCredentials(function(err, data) {
         if(err) {
             console.error("error authenticating." + err);
+            callback(err);
+            return;
         }
-        console.log('verified ' + JSON.stringify(reply));
-    });
+        console.log('verified ' + JSON.stringify(data));
 
-    twit.showUser(req.params.screen_name, function(err, data) {
+        twit.showUser(screen_name, function(err, data) {
+            if(err) {
+                console.error("showUser error " + err);
+                callback(err);
+                return false;
+            }
+
+            console.log('showUser reply ' + JSON.stringify(data));
+
+            callback(null, data);
+        })
+    });
+}
+
+var lookup = function(req, res) {
+    var name = req.params.screen_name;
+
+
+    getTwitter(req.params.screen_name, function(err, data) {
         if(err) {
-            console.error("error getting reply." + err);
+            console.error("lookup REPLY" + JSON.stringify(err));
             return;
         }
 <<<<<<< HEAD
@@ -31,9 +50,10 @@ exports.lookup = function(req, res) {
         res.send(view_data);
 =======
 
-        console.log('received reply ' + JSON.stringify(data));
+        var showLayout = !req.isXMLHttpRequest;
 
         res.render('twitter', {
+            'layout': showLayout,
             'title' : 'Twitter User Details',
             'data': data[0]});
 >>>>>>> 638f25a8fca154d743abc4867ff7fa6a182ab4d0
@@ -52,4 +72,9 @@ exports.lookup = function(req, res) {
 //
 //    });
 
+};
+
+module.exports = {
+  lookup: lookup,
+  getTwitter: getTwitter
 };

@@ -7,39 +7,35 @@ html
 		br
 		h3 Configure Services
 		h4 Twitter
-		div.topbar
-			div.fill
-				div.container
-					form.pull-center(method="post", id="loginForm")
-						input.input-small(id="username", type="text", name="User", placeholder="Username")
-						input.input-small(id="password", type="password", name="Password", placeholder="Password")
-						input.btn.primary(type="submit", value="Sign In")
-					p#loginPrompt.pull-right.login-prompt
-		h4 Quora
-		div.topbar
-			div.fill
-				div.container
-					form.pull-center(method="post", id="loginForm")
-						input.input-small(id="username", type="text", name="User", placeholder="Username")
-						input.input-small(id="password", type="password", name="Password", placeholder="Password")
-						input.btn.primary(type="submit", value="Sign In")
-					p#loginPrompt.pull-right.login-prompt
+		control-group
+			controls
+				input.input-medium(id="username", type="text", name="User", placeholder="Username")
+				input.input-medium(id="password", type="password", name="Password", placeholder="Password")
+			form-actions
+				submit.btn
+					btn-primary Login
 		h4 StackOverFlow
-		div.topbar
-			div.fill
-				div.container
-					form.pull-center(method="post", id="loginForm")
-						input.input-small(id="username", type="text", name="User", placeholder="Username")
-						input.input-small(id="password", type="password", name="Password", placeholder="Password")
-						input.btn.primary(type="submit", value="Sign In")
-					p#loginPrompt.pull-right.login-prompt
+		control-group
+			controls
+				input.input-medium(id="username", type="text", name="User", placeholder="Username")
+				input.input-medium(id="password", type="password", name="Password", placeholder="Password")
+			form-actions
+				submit.btn
+					btn-primary Login
+		h4 Quora
+		control-group
+			controls
+				input.input-medium(id="username", type="text", name="User", placeholder="Username")
+				input.input-medium(id="password", type="password", name="Password", placeholder="Password")	
+			form-actions
+				submit.btn
+					btn-primary Login
 		h4 LinkedIn
-		div.topbar
-			div.fill
-				div.container
-					form.pull-center(method="post", id="loginForm")
-						input.input-small(id="username", type="text", name="User", placeholder="Username")
-						input.input-small(id="password", type="password", name="Password", placeholder="Password")
-						input.btn.primary(type="submit", value="Sign In")
-					p#loginPrompt.pull-right.login-prompt
+		control-group
+			controls
+				input.input-medium(id="username", type="text", name="User", placeholder="Username")
+				input.input-medium(id="password", type="password", name="Password", placeholder="Password")
+			form-actions
+				submit.btn
+					btn-primary Login
 
