@@ -12,10 +12,10 @@ exports.home = function(request,response) {
 }
 
 //prabhu@3:00pm: Commenting this section as it is not needed anymore
-// exports.user = function(request,response) {
-//     var data = {
-//         title : "Profile",
-//         id : request.params.id
-//     };
-//     response.render("user", data);
-// }
+exports.user = function(request,response) {
+    var data = {
+        title : "Profile",
+        id : request.params.id
+    };
+    response.render("user", data);
+}
