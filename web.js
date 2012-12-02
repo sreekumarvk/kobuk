@@ -23,6 +23,8 @@ app.listen(port, function() {
 	console.log("Listening on " + port);
 });
 
+app.get('/',dashboard.home)
+app.get('/:id',dashboard.user)
 app.get('/dashboard',dashboard.home);
 app.get('/dashboard/:id',dashboard.user);
 

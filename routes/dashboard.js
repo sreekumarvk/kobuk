@@ -4,7 +4,7 @@
 
 exports.home = function(request,response) {
 	var data = {
-		title : "Qontaqt.me",
+		title : "QontaQt.me",
 		id : request.params.id
 
 	};
