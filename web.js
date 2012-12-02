@@ -35,8 +35,6 @@ app.listen(port, function() {
 
 app.get('/',dashboard.home)
 app.get('/:id',dashboard.user)
-app.get('/dashboard',dashboard.home);
-app.get('/dashboard/:id',dashboard.user);
 
 app.get('/twitter/connect', twitter.connect);
 app.get('/twitter/lookup/:screen_name', twitter.lookup);

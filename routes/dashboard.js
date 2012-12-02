@@ -1,3 +1,5 @@
+var twitter = require('./twitter');
+
 // exports.home = function(request,response) {
 //  response.send('This is dashboard');
 // }
@@ -17,7 +19,7 @@ exports.user = function(request,response) {
         title : "Profile",
         id : request.params.id,
         profiletype: "Developer", //Hardcoded for now
-        services: "1" //One service to start with
+        services: 1 //One service to start with
     };
     response.render("user", data);
 }
