@@ -23,11 +23,20 @@ exports.lookup = function(req, res) {
             console.error("error getting reply." + err);
             return;
         }
+<<<<<<< HEAD
         var view_data = {
             "timeline": JSON.stringify(data)
         }
         console.log('received reply ' + view_data);
         res.send(view_data);
+=======
+
+        console.log('received reply ' + JSON.stringify(data));
+
+        res.render('twitter', {
+            'title' : 'Twitter User Details',
+            'data': data[0]});
+>>>>>>> 638f25a8fca154d743abc4867ff7fa6a182ab4d0
     });
 
 //    .getHomeTimeline('', function(err, data) {
