@@ -4,7 +4,9 @@
   "dependencies": {
     "express": "2.5.x",
     "stylus": ">= 0.0.1",
-    "jade": ">= 0.0.1"
+    "jade": ">= 0.0.1",
+    "oauth": ">= 0.0.1",
+    "ntwitter": "0.2.10"
   },
   "engines": {
     "node": "0.8.x",
