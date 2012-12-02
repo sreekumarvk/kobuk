@@ -1,8 +1,19 @@
-body {
-    padding: 16px;
-    font: 10px "Lucida Grande", Helvetica, Arial, sans-serif;
-    background: #ccc;
+body{
+    margin:0;
+    padding:65px;
+    font-size:14px;
+    line-height:20px;
+    color:#302b1f;
+    background-color:#faf8f2;
 }
+
+.beckon-logo-small{
+    width:147px;
+    height:20px;
+    line-height:20px;
+}
+
+
 a {
     color: #0069ff;
 }

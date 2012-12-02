@@ -1,14 +1,19 @@
 html
 	title #{title}
 	body
+		#topbar(class="navbar navbar-inverse navbar-fixed-top")
+			.navbar-inner
+				span(class="logo-small") QontaQt
+	.container
 		h4 Name: #{id}
 		h4 Profile: #{profiletype}
-	case services
-		when 1: h4 Twitter defined
-		when 2: h4 StackOverFlow defined
-		when 3: h4 Quora defined
-		default: h4 Nothing defined
+		case services
+			when 1: h4 Twitter defined
+			when 2: h4 StackOverFlow defined
+			when 3: h4 Quora defined
+			default: h4 Nothing defined
 
-	#twitter
-	script(type='text/javascript')
-		user_details = {twitter_name: "#{id}" };
+		#twitter
+		script(type='text/javascript')
+			user_details = {twitter_name: "#{id}" };
+
