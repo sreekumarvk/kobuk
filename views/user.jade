@@ -1,4 +1,8 @@
-h3 Name: 
-id= id
-h3 Profile: Developer
-
+html
+  body
+    h4 Name: #{id}
+    h4 Profile: #{profiletype}
+    case services
+      when 0: h4 Has no services defined
+      when 1: h4 Has one service defined
+      default: h4 Has #{services} services
