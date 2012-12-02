@@ -2,6 +2,7 @@
 var express = require('express');
 var dashboard = require('./routes/dashboard');
 var twitter = require('./routes/twitter');
+var stackexchange = require('./routes/stackexchange');
 
 
 var app = module.exports = express.createServer(express.logger());
@@ -41,6 +42,9 @@ app.get('/:id/settings',dashboard.user.settings)
 //Twitter lookup
 app.get('/twitter/connect', twitter.connect);
 app.get('/twitter/lookup/:screen_name', twitter.lookup);
+
+//Stackoverflow 
+app.get('/stackexchange/reputations/:id', stackexchange.reputations);
 
 app.get('/')
 

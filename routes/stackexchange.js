@@ -26,11 +26,9 @@ function getGzipped(url, callback) {
     });
 }
 
-exports.reputation = function(req, res) {
+exports.reputations = function(req, res) {
     getGzipped('http://api.stackexchange.com/2.1/users/22656/reputation?site=stackoverflow', function(err, data) {
-        //console.log(data);
-        response.render("stackexchange", data);                
+        var jsobj = JSON.parse(data);
+        //response.render("stackexchange", data);                
     });
-
 }
-
