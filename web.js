@@ -33,13 +33,19 @@ app.listen(port, function() {
 	console.log("Listening on " + port);
 });
 
+//Main fetch
 app.get('/',dashboard.home);
 app.get('/:id',dashboard.user);
+app.get('/:id/settings',dashboard.user.settings)
+///dashboard routes are Deprecated.
 app.get('/dashboard',dashboard.home);
 app.get('/dashboard/:id',dashboard.user);
 
+//Twitter lookup
 app.get('/twitter/connect', twitter.connect);
 app.get('/twitter/lookup/:screen_name', twitter.lookup);
+
+
 
 app.get('/')
 
