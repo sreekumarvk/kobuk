@@ -51,19 +51,56 @@ var reputations = function(req, res) {
         console.log("****** username: " + user_name + ", reputation: " + reputation + ", accept_rate: " + accept_rate + ". ******");
 
         // get expertise
-        // for (var i in jsobj){
-        //     var rank = jsobj.items[i].rank;
-        //     var subject = jsobj.items[i].rank;
+        for (var i in jsobj.items){
+            var rank = jsobj.items[i].rank;
+            var subject = jsobj.items[i].name;
 
-        //     console.log("++++++ rank: " + rank + ", subject: " + subject + ". ++++++");
-        // }
+            console.log("++++++ rank: " + rank + ", subject: " + subject + ". ++++++");
 
-        // construct return json
 
+        }
+
+        // construct badge-subject-json
+        var badge_subject_json = [];
+        for (var i in jsobj.items){
+            var rank = jsobj.items[i].rank;
+            var subject = jsobj.items[i].name;
+
+            console.log("++++++ rank: " + rank + ", subject: " + subject + ". ++++++");
+
+            badge_subject_json.push({rank: rank, subject: subject});
+
+            // console.log("type of returned construct: " + typeof badge_subject_json);
+        }
+
+        // test badge-subject-json
+        // status: success
+        console.log("&&&&&" + badge_subject_json.length);
+        for (var j in badge_subject_json){
+            console.log("%%% badge was: " + badge_subject_json[j].rank + " in subject: " + badge_subject_json[j].subject + "%%%%");
+        }
+
+        // construct return-json
+        var ret_json = [];
+        ret_json.push({username: user_name, reputation: reputation, acceptrate: accept_rate, expertise: badge_subject_json});
+
+        // test return-json
+        // status: success
+        console.log("stringifid json": JSON.stringify(ret_json);
+        console.log("$$$$$" + ret_json.length);
+        for (var k in ret_json){
+            console.log("^^^^ User : " + ret_json[k].username + " has a reputation score of: " + ret_json[k].reputation + " and an acceptance rate of: " + ret_json[k].acceptrate + "^^^^");
+
+            var subjectjson = ret_json[k].expertise;
+            console.log("^^^^" + subjectjson.length);
+            for (var l in subjectjson){
+                console.log("^^^^ badge was: " + subjectjson[l].rank + " in subject: " + subjectjson[l].subject + "^^^^");
+            }
+        }
 
         // return to client
         console.log(jsobj.items[0].user.display_name);
-        res.render("stackexchange", {'title' : "Stackexchange Badges", 'stackexchange': jsobj});
+        res.render("stackexchange", {'title' : "Stackexchange Badges", 'stackexchange': ret_json});
     });
 }
 
